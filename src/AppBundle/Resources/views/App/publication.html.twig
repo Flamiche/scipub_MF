@@ -1,0 +1,39 @@
+{% extends "AppBundle::base.html.twig" %}
+
+{% block content %}
+   <div class="jumbotron">
+    <div class="container">
+
+        <div class="publication-thumb">
+            <h2><!-- titre science --></h2>
+            <h1 style="font-size: 48px">{{ publication.title }}</h1>
+            <div>
+                <p>
+                    Publié par <strong>{{publication.author}}</strong>,
+                    le <em>{{ publication.publishedAt|date('d/m/Y') }}</em>.
+                </p>
+                <p>
+                    {{publication.description}}
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div>
+        {{publication.content}}
+    </div>
+    <hr>
+    <p>
+        <!-- Lien vers la page détail science -->
+        <a href="#"
+           class="btn btn-sm btn-default">
+            Retour à liste des publications de la science &laquo;<!-- titre science -->&raquo;
+        </a>
+    </p>
+</div>
+
+{% endblock content %}
+
